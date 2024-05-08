@@ -4,11 +4,11 @@
     "module": "commonjs",
     "lib": ["es6"],
     "allowJs": true,
-    "outDir": "src/dist",
+    "outDir": "dist",
     "rootDir": "src",
     "strict": true,
     "esModuleInterop": true,
-    "types": ["node", "jest"],
+    "types": ["node"],
     "skipLibCheck": true
   },
   "include": ["src/**/*"],
