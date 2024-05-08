@@ -12,5 +12,3 @@ router.get("/products", productController.getProducts);
 router.delete("/products/:id", productController.deleteProduct);
 router.get("/subcategories", productController.getSubcategories);
 router.post("/uploads", productController.createProduct);
-// generate command curl to delete a product
-// curl -X DELETE http://localhost:3000/api/products/1
