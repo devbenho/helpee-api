@@ -95,6 +95,12 @@ var ProductController = /** @class */ (function () {
                 return res.json(subcategories);
             });
         };
+        this.deleteProduct = function (req, res) {
+            var id = req.params.id;
+            _this.productDAL.delete(id).then(function () {
+                return res.json({ message: "Product deleted" });
+            });
+        };
     }
     ProductController.CreateInstance = function () {
         return new ProductController();

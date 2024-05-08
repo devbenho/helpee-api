@@ -180,6 +180,21 @@ var ProductDataAccess = /** @class */ (function () {
             });
         });
     };
+    ProductDataAccess.prototype.delete = function (id) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                return [2 /*return*/, new Promise(function (resolve, reject) {
+                        db_1.db.run("DELETE FROM images WHERE id = ?", [id], function (err) {
+                            if (err) {
+                                console.error(err.message);
+                                reject(new Error("Internal Server Error"));
+                            }
+                            resolve();
+                        });
+                    })];
+            });
+        });
+    };
     return ProductDataAccess;
 }());
 exports.ProductDAL = ProductDataAccess;

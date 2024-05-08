@@ -53,6 +53,12 @@ class ProductController {
         return res.json(subcategories);
       });
   };
+  deleteProduct = (req: Request, res: Response) => {
+    const { id } = req.params;
+    this.productDAL.delete(id).then(() => {
+      return res.json({ message: "Product deleted" });
+    });
+  };
   public static CreateInstance(): ProductController {
     return new ProductController();
   }

@@ -69,7 +69,7 @@ class ProductDataAccess {
     });
   }
 
-  async update(id: number, product: Product): Promise<Product> {
+  async update(id: string, product: Product): Promise<Product> {
     return new Promise((resolve, reject) => {
       db.run(
         "UPDATE images SET name = ?, brand = ?, category = ?, subcategory = ?, isBoycott = ?, imagePath = ? WHERE id = ?",
@@ -138,6 +138,17 @@ class ProductDataAccess {
           reject(new Error("Internal Server Error"));
         }
         resolve(rows as Product[]);
+      });
+    });
+  }
+  async delete(id: string): Promise<void> {
+    return new Promise((resolve, reject) => {
+      db.run("DELETE FROM images WHERE id = ?", [id], (err) => {
+        if (err) {
+          console.error(err.message);
+          reject(new Error("Internal Server Error"));
+        }
+        resolve();
       });
     });
   }
