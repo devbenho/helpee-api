@@ -4,7 +4,7 @@
     "module": "commonjs",
     "lib": ["es6"],
     "allowJs": true,
-    "outDir": "src/build",
+    "outDir": "src/dist",
     "rootDir": "src",
     "strict": true,
     "esModuleInterop": true,
